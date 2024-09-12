@@ -3,6 +3,7 @@ import {
   FETCH_BOOKS_SEARCH,
   FETCH_BOOKS_SEARCH_FAILURE,
   FETCH_BOOKS_SEARCH_SUCCESS,
+  FETCH_BOOKS_SEARCH_EMPTY,
 } from "../../constants";
 
 const initialState = {
@@ -21,7 +22,7 @@ const bookBySearchReducer = (state = initialState, action) => {
     case FETCH_BOOKS_SEARCH_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        data: [...state.data, ...action.payload],
         loading: false,
       };
     case FETCH_BOOKS_SEARCH_FAILURE:
@@ -29,6 +30,12 @@ const bookBySearchReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         loading: false,
+      };
+    case FETCH_BOOKS_SEARCH_EMPTY:
+      return {
+        ...state,
+        loading: false,
+        data: [],
       };
     default:
       return state;

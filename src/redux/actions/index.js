@@ -5,7 +5,10 @@ import {
   fetchBooksEmpty,
 } from "./bookByCategoryActions";
 
-import { fetchBooksBySearch } from "./searchBooksActions";
+import {
+  fetchBooksBySearch,
+  fetchBooksBySearchEmpty,
+} from "./searchBooksActions";
 
 export {
   fetchBooksByCategory,
@@ -13,4 +16,5 @@ export {
   fetchBooksByCategoryFailure,
   fetchBooksBySearch,
   fetchBooksEmpty,
+  fetchBooksBySearchEmpty,
 };

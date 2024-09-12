@@ -6,6 +6,7 @@ import SearchBar from "../components/SearchBar";
 import {
   fetchBooksByCategory,
   fetchBooksBySearch,
+  fetchBooksBySearchEmpty,
   fetchBooksEmpty,
 } from "../redux/actions";
 import BackArrow from "../components/BackArrow";
@@ -63,6 +64,7 @@ const BooksPage = () => {
     // }
     return () => {
       dispatch(fetchBooksEmpty());
+      dispatch(fetchBooksBySearchEmpty());
     };
   }, []);
 
